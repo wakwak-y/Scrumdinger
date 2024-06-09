@@ -48,6 +48,16 @@ struct DetailView: View {
                     Label(attendee.name, systemImage: "person")
                 }
             }
+            
+            // History section
+            Section(header: Text("History")) {
+                ForEach(scrum.history) { history in
+                    HStack {
+                        Image(systemName: "calendar")
+                        Text(history.date, style: .date)
+                    }
+                }
+            }
         }
         .navigationTitle(scrum.title)
         .toolbar {
