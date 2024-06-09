@@ -23,7 +23,7 @@ struct MeetingView: View {
                 // Circle to represent meeting progress visually
                 Circle().strokeBorder(lineWidth: 24.0)
                 
-                MeetingFooterView(speakers: scrumgTimer.speakers, skipAction: scrumTimer.skipSpeaker)
+                MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
         }
         .padding()
