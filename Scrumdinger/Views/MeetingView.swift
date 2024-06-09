@@ -21,18 +21,9 @@ struct MeetingView: View {
                                   theme: scrum.theme)
                 
                 // Circle to represent meeting progress visually
-                Circle()
-                    .strokeBorder(lineWidth: 24.0)
+                Circle().strokeBorder(lineWidth: 24.0)
                 
-                // Display current speaker and button for next speaker
-                HStack {
-                    Text("Speaker 1 of 3")
-                    Spacer()
-                    Button {} label: {
-                        Image(systemName: "forward.fill")
-                    }
-                    .accessibilityLabel("Mext speaker")
-                }
+                MeetingFooterView(speakers: scrumgTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
         }
         .padding()
