@@ -38,6 +38,15 @@ struct MeetingView: View {
         .padding()
         .foregroundColor(scrum.theme.accentColor)
         .navigationBarTitleDisplayMode(.inline)
+        // The lifecycle event when a view becomes visible
+        .onAppear {
+            scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+            scrumTimer.startScrum()
+        }
+        // The lifecycle event when a view becomes invisible
+        .onDisappear {
+            scrumTimer.stopScrum()
+        }
     }
 }
 
